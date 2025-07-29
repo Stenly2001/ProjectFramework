@@ -1,0 +1,12 @@
+﻿@model ProjectFramework.Web.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact ";
+}
+
+<h2>Contact Details</h2>
+
+<p><strong>Address:</strong> @Model.Address</p>
+<p><strong>Website URL:</strong> <a href="http://@Model.Site_URL" target="_blank">@Model.Site_URL</a></p>
+<p><strong>Contact Number:</strong> @Model.Contact_No</p>
+
