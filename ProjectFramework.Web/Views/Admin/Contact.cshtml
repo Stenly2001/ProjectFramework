@@ -1,0 +1,39 @@
+﻿@model ProjectFramework.Web.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><h4>Configure Site Settings</h4></div>
+    <div class="panel-body">
+        <form method="post" asp-controller="ContactPage" asp-action="Settings">
+            <div class="container">
+
+                <div class="form-group">
+                    <label for="Address">Company Address:</label><br />
+                    <input type="text" id="Address" class="form-control" value="@Model.Address" name="Address" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Site_URL">Website URL:</label><br />
+                    <input type="text" id="Site_URL" class="form-control" value="@Model.Site_URL" name="Site_URL" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Contact_No">Contact Number:</label><br />
+                    <textarea id="Contact_No" class="form-control" name="Contact_No">@Model.Contact_No</textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="EnableMobAuth" name="EnableMobAuth" value="true" @(Model.EnableMobAuth == "true" ? "checked" : "") />
+                    <label for="EnableMobAuth">Enable Authentication Check for Mobile API Calls</label>
+                </div>
+
+                <input type="submit" value="Update" class="btn btn-primary" /><br /><br />
+                <label>@Model.StatusString</label>
+            </div>
+        </form>
+    </div>
+</div>
+
